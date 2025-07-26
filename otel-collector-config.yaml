@@ -1,8 +1,8 @@
 receivers:
   otlp:
     protocols:
-      http:
       grpc:
+      http:
 
   prometheus:
     config:
@@ -12,19 +12,19 @@ receivers:
             - targets: ['postgres-exporter:9187']
 
 exporters:
-  logging:
-    loglevel: debug
-
   jaeger:
-    endpoint: jaeger:14268
+    endpoint: jaeger:4317
     tls:
       insecure: true
+
+  logging:
+    loglevel: debug
 
 service:
   pipelines:
     traces:
       receivers: [otlp]
-      exporters: [jaeger, logging]
+      exporters: [otlp, logging]
 
     metrics:
       receivers: [prometheus]
