@@ -144,6 +144,19 @@ You can view:
 -  Metrics exposed from **PostgreSQL Exporter** (`localhost:9187/metrics`)
 
 Screenshots included in the `demo/` folder.
+## Jaeger UI (Client-Side Instrumentation - Method 1)
+
+This shows the OpenTelemetry traces from PostgreSQL queries captured via Flask client instrumentation:
+
+![Jaeger Screenshot](./demo/Jaeger%20Screenshot.jpeg)
+
+---
+
+## Prometheus Metrics (Server-Side Monitoring - Method 2)
+
+PostgreSQL exported metrics collected via OpenTelemetry Collector and Prometheus:
+
+![Prometheus Screenshot](./demo/prometheus%20Screenshot.png)
 
 ---
 
